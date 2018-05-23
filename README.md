@@ -11,7 +11,7 @@ In the next few lines I'll explain step-by-step how you can deploy a container p
 * R
 * Keras (TBD)
 * Tensorflow (TBD)
-* OpenGym AI (TBD)
+* Gym OpenAI (TBD)
 
 
 ## Step 1: Install Docker
