@@ -45,6 +45,7 @@ Alternatively, we can build our docker image from the Dockerfile in the repo. To
 ```bash
 $ cd docker
 $ docker build -t learn-ai:latest .
+$ docker rmi $(docker images -f "dangling=true" -q)
 ```
 
 ## Step 4: Create an External Docker Volume
