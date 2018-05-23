@@ -77,5 +77,6 @@ _Note: An important point to note is that our launch script is configured to rem
 ## Working with the AI tooling
 
 ```bash
+$ git pull # Updates our code-base (saved in our ext volume)
 $ rstudio  # To start working with R in RStudio
 ```
