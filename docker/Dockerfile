@@ -52,6 +52,24 @@ ENV QT_XKB_CONFIG_ROOT /usr/share/X11/xkb
 
 
 # --------------------------------------------------------------------------
+# Jupyter Setup
+# --------------------------------------------------------------------------
+# Notes:
+#   libcanberra-gtk3-module - Avoid firefox launch error "Failed to load 
+#     module canberra-gtk-module"
+#   dbus-x11 - Avoid firefox launch error "Unable to get session bus...
+#     failed... dbus-launch"
+RUN apt-get install -y \
+    firefox \
+    libcanberra-gtk3-module \
+    dbus-x11 \
+    python-pip \
+    python-dev \
+    ipython \
+    ipython-notebook
+RUN pip install jupyter
+
+# --------------------------------------------------------------------------
 # Cleanup to avoid locked source list
 # --------------------------------------------------------------------------
 RUN rm -rf /var/lib/apt/lists/*

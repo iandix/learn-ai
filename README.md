@@ -85,3 +85,7 @@ $ git pull
 # To start working with R in RStudio
 $ rstudio
 ```
+```bash
+# To launch Jupyter
+jupyter notebook --allow-root --ip=127.0.0.1
+```
