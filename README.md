@@ -11,7 +11,7 @@ In the next few lines I'll explain step-by-step how you can deploy a container p
 * R
 * Keras (TBD)
 * Tensorflow (TBD)
-* OpenGym AI (TBD)
+* Gym OpenAI (TBD)
 
 
 ## Step 1: Install Docker
@@ -40,11 +40,11 @@ If you want to skip the small talk and get straigh down to business just run on 
 $ docker pull iandin/learn-ai:latest
 ```
 
-Alternatively, we can build our docker image from the Dockerfile in the repo. To do this, after cloning the git repo:
+Or, we can build our docker image from the Dockerfile in the repo. To do this, after cloning the git repo:
 
 ```bash
 $ cd docker
-$ docker build -t learn-ai:latest .
+$ docker build -t iandin/learn-ai:latest .
 $ docker rmi $(docker images -f "dangling=true" -q)
 ```
 

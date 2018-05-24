@@ -11,6 +11,6 @@ nvidia-docker run -it --rm \
 -e LOCAL_USER_ID=`id -u $USER` \
 -e LOCAL_GROUP_ID=`id -g $USER` \
 -e LOCAL_GROUP_NAME=`id -gn $USER` \
-learn-ai:latest
+iandin/learn-ai:latest
 
 xhost -local:root
