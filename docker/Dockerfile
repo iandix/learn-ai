@@ -20,7 +20,7 @@ ENV LC_ALL en_US.UTF-8
 # --------------------------------------------------------------------------
 # Notes:
 #   software-properties-common - contains add-apt-repository
-#   apt-transport-https - required while updating packages to achieve CRAN
+#   apt-transport-https - required while updating packages to reach CRAN
 #   gdebi-core - required to install rstudio (manages dependencies)
 # --------------------------------------------------------------------------
 RUN apt-get install -y --no-install-recommends apt-utils
