@@ -59,19 +59,37 @@ ENV QT_XKB_CONFIG_ROOT /usr/share/X11/xkb
 #     module canberra-gtk-module"
 #   dbus-x11 - Avoid firefox launch error "Unable to get session bus...
 #     failed... dbus-launch"
+#   python-virtualenv - Pre-requisite of Tensorflow while installing Keras
 RUN apt-get install -y \
     firefox \
     libcanberra-gtk3-module \
     dbus-x11 \
     python-pip \
     python-dev \
+    python-virtualenv \
     ipython \
     ipython-notebook
 RUN pip install jupyter
+# Adding a R Kernel to Jupyter
+RUN apt-get -y install libcurl4-gnutls-dev libssl-dev
+RUN Rscript -e "install.packages('devtools')"
+RUN Rscript -e "devtools::install_github('IRkernel/IRkernel')"
+RUN Rscript -e "IRkernel::installspec(user = FALSE)"
+# Adding Keras R Interface
+RUN Rscript -e "devtools::install_github('rstudio/keras')"
+RUN Rscript -e "library(keras)" -e "install_keras()"
+# Adding other CRAN Packages
+#   Soft Computing
+#RUN Rscript -e "install.packages('RoughtSets')"
+RUN Rscript -e "install.packages('anfis')"
+RUN Rscript -e "install.packages('sets')"
+RUN Rscript -e "install.packages('GA')"
 
 # --------------------------------------------------------------------------
-# Cleanup to avoid locked source list
+# Cleaning up
 # --------------------------------------------------------------------------
+RUN apt-get autoremove -y
+RUN apt-get autoclean
 RUN rm -rf /var/lib/apt/lists/*
 
 
