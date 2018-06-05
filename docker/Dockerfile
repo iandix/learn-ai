@@ -80,6 +80,13 @@ RUN Rscript -e "devtools::install_github('IRkernel/IRkernel')"
 RUN Rscript -e "IRkernel::installspec(user = FALSE)"
 
 # --------------------------------------------------------------------------
+# Packages required to RStudio R-Notebooks
+# --------------------------------------------------------------------------
+RUN Rscript -e "install.packages(c('highr', 'markdown', 'caTools'))" \
+            -e "install.packages(c('bitops', 'knitr', 'rprojroot'))" \
+            -e "install.packages('rmarkdown')"
+
+# --------------------------------------------------------------------------
 # Keras R Interface
 # --------------------------------------------------------------------------
 RUN Rscript -e "devtools::install_github('rstudio/keras')"
@@ -89,9 +96,13 @@ RUN Rscript -e "library(keras)" -e "install_keras()"
 # Soft Computing CRAN Packages
 # --------------------------------------------------------------------------
 #RUN Rscript -e "install.packages('RoughtSets')"
-RUN Rscript -e "install.packages('anfis')"
-RUN Rscript -e "install.packages('sets')"
-RUN Rscript -e "install.packages('GA')"
+RUN Rscript -e "install.packages(c('anfis', 'sets', 'GA'))"
+
+# --------------------------------------------------------------------------
+# Other interesting CRAN Packages
+# --------------------------------------------------------------------------
+RUN Rscript -e "install.packages(c('shiny', 'corrplot', 'ggvis'))"
+
 
 # --------------------------------------------------------------------------
 # Cleaning up
