@@ -73,7 +73,7 @@ $ cd /home/$USER/dev  # $USER is your user folder
 $ git clone https://github.com/iandix/learn-ai.git
 ```
 
-_Note: An important point to note is that our launch script is configured to remove the container after leaving. This is required since nvidia-docker accepts configuration parameters only over the *docker run command*. So we can't use 'docker exec' later to get into our previously launched container and expect the GUI to work._
+_Note: An important point to note is that our launch script is configured to remove the container after leaving. This is required since nvidia-docker accepts configuration parameters only over the 'docker run' command. So we can't use 'docker exec' later to get into our previously launched container and expect the GUI to work._
 
 ## Working with the AI tooling
 
