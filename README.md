@@ -28,7 +28,7 @@ sudo service docker restart
 
 ## Step 2: NVIDIA acceleration
 
-Install nvidia-docker (to get HW acceleration https://github.com/NVIDIA/nvidia-docker/wiki
+Install nvidia-docker (to get HW acceleration https://github.com/NVIDIA/nvidia-docker/wiki)
 
 _Note: We'll use here the nvidia-docker 1.0 legacy version since the new nvidia-docker2 still lacks support to OpenGL_  
 
@@ -61,7 +61,7 @@ $ docker volume create learn-ai
 The launch.sh bash script will call nvidia-docker with the appropriate parameters in order to start a docker container based on our image 'learn-ai':
 
 ```bash
-# You migh need to call add execution permission to our launch file
+# You migh need to add execution permission to the launch file
 $ chmod +x ./launch.sh
 $ ./launch.sh
 ``` 
@@ -73,7 +73,7 @@ $ cd /home/$USER/dev  # $USER is your user folder
 $ git clone https://github.com/iandix/learn-ai.git
 ```
 
-_Note: An important point to note is that our launch script is configured to remove the  container after leaving. This is required since nvidia-docker accepts configuration parameters only over the run command. So we can't use 'docker exec' later to get into our previously launched container and expect the GUI to work._
+_Note: An important point to note is that our launch script is configured to remove the container after leaving. This is required since nvidia-docker accepts configuration parameters only over the *docker run command*. So we can't use 'docker exec' later to get into our previously launched container and expect the GUI to work._
 
 ## Working with the AI tooling
 
